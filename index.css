@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #141414;
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333;
+  }
+}
+
+.markdown-body {
+  @apply text-[#141414];
+}
+
+.markdown-body h1, 
+.markdown-body h2, 
+.markdown-body h3 {
+  @apply font-serif italic text-[#141414] mt-8 mb-4;
+}
+
+.markdown-body p {
+  @apply mb-4 leading-relaxed;
+}
+
+.markdown-body ul {
+  @apply mb-6 space-y-2;
+}
+
+.markdown-body li {
+  @apply flex gap-3 items-start;
+}
+
+.markdown-body strong {
+  @apply font-bold text-[#141414];
+}
+
+.markdown-body pre {
+  @apply bg-[#141414] text-[#E4E3E0] p-6 font-mono text-[13px] overflow-x-auto my-6 border-l-4 border-emerald-500 shadow-lg;
+}
+
+.markdown-body code:not(pre code) {
+  @apply bg-gray-100 px-1.5 py-0.5 rounded font-mono text-[13px] border border-gray-200;
+}
